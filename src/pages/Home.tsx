@@ -2,10 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import { Headphones, MessageCircle } from "lucide-react";
-
 const Home = () => {
-  return (
-    <Layout>
+  return <Layout>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Section */}
         <section className="py-20 md:py-32 text-center">
@@ -24,8 +22,7 @@ const Home = () => {
               </Button>
             </Link>
             <a href="https://pulsechat.online" target="_blank" rel="noopener noreferrer">
-              <Button size="lg" variant="outline" className="gap-2">
-                <MessageCircle className="h-5 w-5" />
+              <Button size="lg" variant="outline" className="gap-2">Go to pulse chat<MessageCircle className="h-5 w-5" />
                 Join the Conversation
               </Button>
             </a>
@@ -87,8 +84,6 @@ const Home = () => {
           </div>
         </section>
       </div>
-    </Layout>
-  );
+    </Layout>;
 };
-
 export default Home;
