@@ -21,7 +21,7 @@ const Home = () => {
               </Button>
             </Link>
             <a href="https://pulsechat.online" target="_blank" rel="noopener noreferrer">
-              <Button size="lg" variant="outline" className="gap-2">Go to pulse chat<MessageCircle className="h-5 w-5" />
+              <Button size="lg" variant="outline" className="gap-2">Go to pulse<MessageCircle className="h-5 w-5" />
                 Join the Conversation
               </Button>
             </a>
