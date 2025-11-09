@@ -16,8 +16,7 @@ const Home = () => {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in">
             <Link to="/podcast">
-              <Button size="lg" className="gap-2">
-                <Headphones className="h-5 w-5" />
+              <Button size="lg" className="gap-2">Listen to Global Pulse chat pod<Headphones className="h-5 w-5" />
                 Listen to Today's Pulse
               </Button>
             </Link>
