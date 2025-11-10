@@ -1,0 +1,92 @@
+ 
+💡 Lovable Build Prompt — GlobalPulseWorld.xyz
+We’re building GlobalPulseWorld.xyz, the official home of Pulse chat — The World’s 24-Hour Conversation.
+This is the front page of a global movement to map humanity’s heartbeat through real-time conversation.
+At its core is Pulsechat.online, the world’s first chat that resets every 24 hours — a digital pulse that reflects how humanity feels, one day at a time.
+The website should inspire visitors to join this experiment in collective emotion and communication, while previewing the broader Global Pulse ecosystem that’s evolving around it.
+ 
+🧭 Purpose and Mood
+•	Feel: clean, bold, emotional minimalism (Apple × Notion aesthetic).
+•	Mood: alive, human, global — with a subtle heartbeat or countdown animation.
+•	Emphasis: conversation, emotion, renewal, and global connection.
+•	Tone: visionary yet simple — the world’s daily reset in a single breath.
+ 
+🧩 Core Requirements
+Framework: Next.js + TailwindCSS, deployed on Vercel.
+Domain: globalpulseworld.xyz
+Pages:
+1.	Home (/) — Core experience and CTA to join Pulsechat.
+2.	About (/about) — Mission, vision, and philosophical roots.
+3.	Roadmap (/roadmap) — Evolution of the ecosystem, including “coming soon” utilities.
+ 
+🏠 1. Home Page
+Hero Section:
+•	Headline:
+“Global Pulse — The World’s 24-Hour Conversation.”
+•	Subtext:
+“Every day, the world resets. Millions of voices rise again — one heartbeat, one pulse.”
+•	Countdown Timer: Live-synced with Pulsechat.online’s daily reset (00:00 UTC).
+•	CTA Button:
+“💬 Join the Conversation” → Pulsechat.online
+•	Visual: Soft animated globe or heartbeat waveform to represent the world’s rhythm.
+Concept Section:
+Explain briefly:
+“Global Pulse connects humanity through a single daily rhythm — a chat that resets every 24 hours.
+When the world speaks, emotion becomes data, and data becomes understanding.”
+Ecosystem Section (Coming Soon):
+Three minimal “coming soon” cards:
+•	🎧 Pulse Podcast — “AI reflections on the world’s emotional rhythm.”
+•	🎵 Pulse Songs — “Music inspired by humanity’s collective heartbeat.”
+•	🖼️ Pulse Highlights (NFT) — “Daily art born from the world’s conversations.”
+Each marked with a “Coming Soon” tag or faded style to visually separate future phases.
+Why It Matters Section:
+“Global Pulse is a living emotional record of humanity —
+one that renews itself every day, free from noise, ego, and algorithms.”
+ 
+📘 2. About Page
+•	Mission:
+“To make the world’s emotional rhythm visible and alive — connecting people through shared expression, empathy, and renewal.”
+•	Story: Origins of Pulsechat and the philosophy behind the 24-hour reset.
+•	Principles:
+o	Emotion over metrics
+o	Anonymity with authenticity
+o	Renewal through daily reset
+o	Humanity before algorithms
+•	CTA: “Join the Pulse → Pulsechat.online”
+ 
+🗺️ 3. Roadmap Page
+•	Title: “Building Humanity’s Heartbeat.”
+•	Vertical timeline structure:
+o	Phase I — Pulsechat MVP (Live Now)
+o	Phase II — Pulse Podcast (Coming Soon)
+o	Phase III — Pulse Songs & Art (Coming Soon)
+o	Phase IV — Pulse Credits & Proof of Vibe (Coming Soon)
+o	Phase V — The Pulse Economy (Coming Soon)
+•	Visual cue: glowing pulse line running down the page with active phase highlighted.
+ 
+🎨 Design & Branding
+•	Color palette:
+o	Primary Teal #008080 — connection, calm
+o	Accent Red #FF4C4C — vitality, emotion
+o	White background #FFFFFF — minimal purity
+o	Text #111111, Muted Gray #6B7280
+•	Typography:
+o	Headings: Inter, bold
+o	Body: Lato, regular
+•	Animations:
+o	Gentle pulse effect on the countdown timer
+o	Fade-in transitions between sections
+ 
+🧠 Messaging Tone
+Use natural, emotional, global language.
+Mix the words emotion, chat, and conversation interchangeably — never cold or corporate.
+Avoid overemphasizing crypto, metrics, or tech — this is about humanity first.
+Highlight the 24-hour reset and “world’s first chat that restarts daily” as the key innovation.
+ 
+✅ Deliverables
+A fully responsive, production-ready Next.js web app for globalpulseworld.xyz with:
+•	Dynamic home landing experience centered on Pulsechat and 24-hour reset.
+•	Countdown timer synchronized with Pulsechat’s reset.
+•	Ecosystem section showing future utilities as “Coming Soon.”
+•	About and Roadmap pages clearly explaining mission and future.
+•	Modern, minimal, emotionally resonant UI — optimized for mobile and desktop.
