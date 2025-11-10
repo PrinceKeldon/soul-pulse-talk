@@ -4,16 +4,12 @@ import Layout from "@/components/Layout";
 import { MessageCircle, Headphones, Music, Image } from "lucide-react";
 import CountdownTimer from "@/components/CountdownTimer";
 import ComingSoonCard from "@/components/ComingSoonCard";
-
 const Home = () => {
-  return (
-    <Layout>
+  return <Layout>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Section */}
         <section className="py-20 md:py-32 text-center">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 animate-fade-in">
-            Global Pulse — The World's 24-Hour Conversation.
-          </h1>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 animate-fade-in">The World's 24-Hour Conversation.</h1>
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto animate-fade-in">
             Every day, the world resets. Millions of voices rise again — one heartbeat, one pulse.
           </p>
@@ -60,21 +56,9 @@ const Home = () => {
             </p>
 
             <div className="grid md:grid-cols-3 gap-8">
-              <ComingSoonCard
-                icon={Headphones}
-                title="🎧 Pulse Podcast"
-                description="AI reflections on the world's emotional rhythm."
-              />
-              <ComingSoonCard
-                icon={Music}
-                title="🎵 Pulse Songs"
-                description="Music inspired by humanity's collective heartbeat."
-              />
-              <ComingSoonCard
-                icon={Image}
-                title="🖼️ Pulse Highlights (NFT)"
-                description="Daily art born from the world's conversations."
-              />
+              <ComingSoonCard icon={Headphones} title="🎧 Pulse Podcast" description="AI reflections on the world's emotional rhythm." />
+              <ComingSoonCard icon={Music} title="🎵 Pulse Songs" description="Music inspired by humanity's collective heartbeat." />
+              <ComingSoonCard icon={Image} title="🖼️ Pulse Highlights (NFT)" description="Daily art born from the world's conversations." />
             </div>
           </div>
         </section>
@@ -108,8 +92,6 @@ const Home = () => {
           </div>
         </section>
       </div>
-    </Layout>
-  );
+    </Layout>;
 };
-
 export default Home;
