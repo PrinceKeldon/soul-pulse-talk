@@ -82,6 +82,43 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer utilities {
+  @keyframes pulse-glow {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.6;
+      transform: scale(1.05);
+    }
+  }
+  
+  @keyframes heartbeat {
+    0%, 100% {
+      transform: scale(1);
+    }
+    25% {
+      transform: scale(1.1);
+    }
+    50% {
+      transform: scale(1);
+    }
+  }
+  
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+  
+  .animate-heartbeat {
+    animation: heartbeat 1.5s ease-in-out infinite;
   }
 }

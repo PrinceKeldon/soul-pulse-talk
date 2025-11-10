@@ -1,27 +1,30 @@
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { CheckCircle2, Circle } from "lucide-react";
+import { CheckCircle2, Circle, Zap } from "lucide-react";
+import PulseLine from "@/components/PulseLine";
 
 const Roadmap = () => {
   const phases = [
     {
       number: "I",
-      title: "PulseChat MVP",
+      title: "Pulsechat MVP",
       status: "completed",
-      description: "Anonymous 24-hour conversation platform with real-time emotional mapping and global participation.",
+      badge: "Live Now",
+      description: "The world's first chat that resets every 24 hours — capturing humanity's daily emotional rhythm.",
       features: [
         "Anonymous pulse submission",
         "Real-time emotional heatmap",
-        "24-hour reset cycle",
-        "Basic moderation system"
+        "24-hour reset cycle at midnight UTC",
+        "Global participation system"
       ]
     },
     {
       number: "II",
-      title: "Pulse Podcast Launch",
-      status: "active",
-      description: "AI-generated daily audio reflections transforming global emotions into narrative soundscapes.",
+      title: "Pulse Podcast",
+      status: "upcoming",
+      badge: "Coming Soon",
+      description: "AI-generated daily audio reflections transforming the world's emotions into narrative soundscapes.",
       features: [
         "Daily AI-generated episodes",
         "Emotion-to-audio synthesis",
@@ -31,12 +34,13 @@ const Roadmap = () => {
     },
     {
       number: "III",
-      title: "Pulse NFT & Song Experiments",
+      title: "Pulse Songs & Art",
       status: "upcoming",
-      description: "Transform daily emotional snapshots into unique digital collectibles and generative music pieces.",
+      badge: "Coming Soon",
+      description: "Transform daily emotional snapshots into unique music pieces and digital art collectibles.",
       features: [
-        "Daily Pulse NFT minting",
         "Generative music creation",
+        "Daily Pulse NFT highlights",
         "Emotional metadata encoding",
         "Community ownership model"
       ]
@@ -45,6 +49,7 @@ const Roadmap = () => {
       number: "IV",
       title: "Pulse Credits & Proof of Vibe",
       status: "upcoming",
+      badge: "Coming Soon",
       description: "Reward system for authentic participation, creating a reputation layer based on emotional contribution.",
       features: [
         "Pulse Credit system",
@@ -57,12 +62,13 @@ const Roadmap = () => {
       number: "V",
       title: "The Pulse Economy",
       status: "future",
+      badge: "Coming Soon",
       description: "Full ecosystem with creator tools, emotional data markets, and decentralized governance.",
       features: [
         "Creator monetization",
         "Emotional data marketplace",
         "DAO governance structure",
-        "Global expansion"
+        "Global expansion initiatives"
       ]
     }
   ];
@@ -80,8 +86,8 @@ const Roadmap = () => {
 
           {/* Timeline */}
           <div className="relative">
-            {/* Vertical line */}
-            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-border" />
+            {/* Glowing Pulse Line */}
+            <PulseLine />
 
             <div className="space-y-12">
               {phases.map((phase, index) => (
@@ -89,9 +95,14 @@ const Roadmap = () => {
                   {/* Timeline marker */}
                   <div className="absolute left-8 -translate-x-1/2 mt-2">
                     {phase.status === "completed" ? (
-                      <CheckCircle2 className="h-8 w-8 text-primary bg-background" />
-                    ) : phase.status === "active" ? (
-                      <div className="h-8 w-8 rounded-full border-4 border-primary bg-background animate-pulse" />
+                      <div className="relative">
+                        <CheckCircle2 className="h-8 w-8 text-primary bg-background relative z-10" />
+                        <div className="absolute inset-0 animate-heartbeat">
+                          <Zap className="h-8 w-8 text-accent opacity-50" />
+                        </div>
+                      </div>
+                    ) : phase.status === "upcoming" ? (
+                      <Circle className="h-8 w-8 text-primary bg-background fill-background" />
                     ) : (
                       <Circle className="h-8 w-8 text-muted-foreground bg-background" />
                     )}
@@ -111,18 +122,18 @@ const Roadmap = () => {
                           </CardDescription>
                         </div>
                         {phase.status === "completed" && (
-                          <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">
-                            Completed
-                          </span>
-                        )}
-                        {phase.status === "active" && (
-                          <span className="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium">
-                            Active
+                          <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium animate-pulse-glow">
+                            {phase.badge}
                           </span>
                         )}
                         {phase.status === "upcoming" && (
                           <span className="px-3 py-1 bg-muted text-muted-foreground rounded-full text-sm font-medium">
-                            Upcoming
+                            {phase.badge}
+                          </span>
+                        )}
+                        {phase.status === "future" && (
+                          <span className="px-3 py-1 bg-muted text-muted-foreground rounded-full text-sm font-medium">
+                            {phase.badge}
                           </span>
                         )}
                       </div>

@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
-import { Headphones, MessageCircle } from "lucide-react";
+import { MessageCircle, Headphones, Music, Image } from "lucide-react";
+import CountdownTimer from "@/components/CountdownTimer";
+import ComingSoonCard from "@/components/ComingSoonCard";
+
 const Home = () => {
   return (
     <Layout>
@@ -9,81 +12,104 @@ const Home = () => {
         {/* Hero Section */}
         <section className="py-20 md:py-32 text-center">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 animate-fade-in">
-            The World's 24-Hour Conversation
+            Global Pulse — The World's 24-Hour Conversation.
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto animate-fade-in">
-            Humanity speaks, and AI transforms it into sound.
+          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto animate-fade-in">
+            Every day, the world resets. Millions of voices rise again — one heartbeat, one pulse.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in">
-            <Link to="/podcast">
-              <Button size="lg" className="gap-2">
-                pulse chat podcast
-                <Headphones className="h-5 w-5" />
-              </Button>
-            </Link>
+          <CountdownTimer />
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in mt-12">
             <a href="https://pulsechat.online" target="_blank" rel="noopener noreferrer">
-              <Button size="lg" variant="outline" className="gap-2">
+              <Button size="lg" className="gap-2">
                 <MessageCircle className="h-5 w-5" />
-                Go to pulse chat
+                Join the Conversation
               </Button>
             </a>
+            <Link to="/podcast">
+              <Button size="lg" variant="outline" className="gap-2">
+                <Headphones className="h-5 w-5" />
+                Pulse Podcast
+              </Button>
+            </Link>
           </div>
         </section>
 
         {/* Concept Section */}
         <section className="py-20 border-t border-border">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">
-              When humanity speaks, the world has a heartbeat.
+            <p className="text-xl md:text-2xl text-foreground leading-relaxed">
+              Global Pulse connects humanity through a single daily rhythm — a chat that resets every 24 hours.
+              <br />
+              <span className="text-muted-foreground mt-4 block">
+                When the world speaks, emotion becomes data, and data becomes understanding.
+              </span>
+            </p>
+          </div>
+        </section>
+
+        {/* Ecosystem Section */}
+        <section className="py-20 border-t border-border">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-center">
+              The Global Pulse Ecosystem
             </h2>
+            <p className="text-lg text-muted-foreground mb-12 text-center max-w-2xl mx-auto">
+              Beyond the conversation — exploring new ways to experience humanity's heartbeat
+            </p>
 
-            <div className="flex items-center justify-center gap-8 text-6xl my-16">
-              <span className="animate-pulse">🌍</span>
-              <span className="text-muted-foreground">→</span>
-              <span className="animate-pulse delay-150">💬</span>
-              <span className="text-muted-foreground">→</span>
-              <span className="animate-pulse delay-300">🔊</span>
+            <div className="grid md:grid-cols-3 gap-8">
+              <ComingSoonCard
+                icon={Headphones}
+                title="🎧 Pulse Podcast"
+                description="AI reflections on the world's emotional rhythm."
+              />
+              <ComingSoonCard
+                icon={Music}
+                title="🎵 Pulse Songs"
+                description="Music inspired by humanity's collective heartbeat."
+              />
+              <ComingSoonCard
+                icon={Image}
+                title="🖼️ Pulse Highlights (NFT)"
+                description="Daily art born from the world's conversations."
+              />
             </div>
+          </div>
+        </section>
 
-            <div className="grid md:grid-cols-3 gap-8 mt-16">
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-3 text-foreground">Emotion</h3>
-                <p className="text-muted-foreground">
-                  Every 24 hours, billions experience joy, fear, hope, and sadness. Now we can see how the world feels.
-                </p>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-3 text-foreground">Anonymity</h3>
-                <p className="text-muted-foreground">
-                  No likes, followers, or profiles. Only honest emotion, shared without performance.
-                </p>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-3 text-foreground">Renewal</h3>
-                <p className="text-muted-foreground">
-                  Every midnight UTC, the conversation resets. Yesterday's emotions don't define today.
-                </p>
-              </div>
-            </div>
+        {/* Why It Matters Section */}
+        <section className="py-20 border-t border-border">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+              Why It Matters
+            </h2>
+            <p className="text-xl md:text-2xl text-foreground leading-relaxed">
+              Global Pulse is a living emotional record of humanity — one that renews itself every day, 
+              free from noise, ego, and algorithms.
+            </p>
           </div>
         </section>
 
         {/* CTA Section */}
         <section className="py-20 border-t border-border">
           <div className="text-center">
-            <h2 className="text-3xl font-bold text-foreground mb-6">Listen to the world breathe</h2>
+            <h2 className="text-3xl font-bold text-foreground mb-6">Be Part of the Pulse</h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              The Pulse Podcast is humanity's daily reflection — an AI-generated soundscape of the world's emotional
-              heartbeat.
+              Join the world's 24-hour conversation. Your voice shapes humanity's heartbeat.
             </p>
-            <Link to="/podcast">
-              <Button size="lg">Explore the Pulse Podcast</Button>
-            </Link>
+            <a href="https://pulsechat.online" target="_blank" rel="noopener noreferrer">
+              <Button size="lg" className="gap-2 animate-heartbeat">
+                <MessageCircle className="h-5 w-5" />
+                Start Pulsing Now
+              </Button>
+            </a>
           </div>
         </section>
       </div>
     </Layout>
   );
 };
+
 export default Home;
