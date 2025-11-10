@@ -4,11 +4,17 @@ import Layout from "@/components/Layout";
 import { MessageCircle, Headphones, Music, Image } from "lucide-react";
 import CountdownTimer from "@/components/CountdownTimer";
 import ComingSoonCard from "@/components/ComingSoonCard";
+import worldMap from "@/assets/world-map.png";
 const Home = () => {
   return <Layout>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Section */}
-        <section className="py-20 md:py-32 text-center">
+        <section className="relative py-20 md:py-32 text-center overflow-hidden">
+          <div 
+            className="absolute inset-0 bg-no-repeat bg-center bg-contain opacity-[0.07] pointer-events-none"
+            style={{ backgroundImage: `url(${worldMap})` }}
+            aria-hidden="true"
+          />
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 animate-fade-in">The World's 24-Hour Conversation.</h1>
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto animate-fade-in">
             Every day, the world resets. Millions of voices rise again — one heartbeat, one pulse.
