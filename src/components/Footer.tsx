@@ -1,48 +1,26 @@
 import { Link } from "react-router-dom";
 
-const Footer = () => {
-  return (
-    <footer className="border-t border-border bg-background mt-auto">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="text-sm text-muted-foreground">
-            © Global Pulse {new Date().getFullYear()}
-          </div>
-          
-          <div className="flex items-center gap-6">
-            <Link 
-              to="/" 
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Home
-            </Link>
-            <Link 
-              to="/podcast" 
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Podcast
-            </Link>
-            <Link 
-              to="/about" 
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
-              About
-            </Link>
-            <Link 
-              to="/roadmap" 
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Roadmap
-            </Link>
-          </div>
-
-          <div className="text-sm text-muted-foreground">
-            "When humanity speaks, the world has a heartbeat."
-          </div>
-        </div>
-      </div>
-    </footer>
-  );
-};
+const Footer = () => (
+  <footer className="relative z-10 flex justify-between items-center px-10 py-6 border-t border-dim flex-wrap gap-4">
+    <div className="font-mono text-[11px] text-amber tracking-[0.14em]">GLOBALPULSEWORLD.XYZ</div>
+    <div className="flex gap-6">
+      <a href="/#how" className="font-mono text-[10px] text-muted-foreground hover:text-amber tracking-[0.1em]">
+        How it works
+      </a>
+      <a href="/#intelligence" className="font-mono text-[10px] text-muted-foreground hover:text-amber tracking-[0.1em]">
+        Intelligence
+      </a>
+      <Link to="/about" className="font-mono text-[10px] text-muted-foreground hover:text-amber tracking-[0.1em]">
+        About
+      </Link>
+      <Link to="/roadmap" className="font-mono text-[10px] text-muted-foreground hover:text-amber tracking-[0.1em]">
+        Roadmap
+      </Link>
+    </div>
+    <div className="font-mono text-[10px] text-muted-foreground tracking-[0.08em]">
+      © {new Date().getFullYear()} Global Pulse · Resets daily at 00:00 UTC
+    </div>
+  </footer>
+);
 
 export default Footer;

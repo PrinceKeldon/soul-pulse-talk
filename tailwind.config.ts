@@ -14,8 +14,10 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Lato', 'sans-serif'],
-        heading: ['Inter', 'sans-serif'],
+        sans: ['"IBM Plex Sans"', 'sans-serif'],
+        serif: ['"Playfair Display"', 'serif'],
+        mono: ['"IBM Plex Mono"', 'monospace'],
+        heading: ['"Playfair Display"', 'serif'],
       },
       colors: {
         border: "hsl(var(--border))",
