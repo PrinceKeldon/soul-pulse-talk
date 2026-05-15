@@ -1,103 +1,146 @@
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
-import { MessageCircle, Headphones, Music, Image } from "lucide-react";
 import CountdownTimer from "@/components/CountdownTimer";
-import ComingSoonCard from "@/components/ComingSoonCard";
-import worldMap from "@/assets/world-map.png";
+import LiveStatsStrip from "@/components/LiveStatsStrip";
+import LiveTicker from "@/components/LiveTicker";
+import PulseReportCard from "@/components/PulseReportCard";
+import IntelTiers from "@/components/IntelTiers";
+
 const Home = () => {
-  return <Layout>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Hero Section */}
-        <section className="relative py-20 md:py-32 text-center overflow-hidden">
-          <div 
-            className="absolute inset-0 bg-no-repeat bg-center bg-contain opacity-[0.07] pointer-events-none"
-            style={{ backgroundImage: `url(${worldMap})` }}
-            aria-hidden="true"
-          />
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 animate-fade-in">The World's 24-Hour Conversation.</h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto animate-fade-in">
-            Every day, the world resets. Millions of voices rise again — one heartbeat, one pulse.
-          </p>
+  return (
+    <Layout>
+      {/* HERO */}
+      <section className="relative z-10 min-h-[calc(100vh-5rem)] flex flex-col items-center justify-center text-center px-6 py-12">
+        <div className="font-mono text-[10px] tracking-[0.24em] uppercase text-amber mb-8 animate-fade-up flex items-center gap-3">
+          <span className="opacity-40">─────</span>
+          195 countries · live now · resets at midnight utc
+          <span className="opacity-40">─────</span>
+        </div>
 
+        <h1
+          className="font-serif font-normal leading-[1.1] mb-6 animate-fade-up"
+          style={{ fontSize: "clamp(38px, 6vw, 78px)", animationDelay: "0.15s" }}
+        >
+          The World's <em className="text-amber-bright not-italic font-serif italic">Heartbeat.</em>
+          <br />In Real Time.
+        </h1>
+
+        <div className="animate-fade-up" style={{ animationDelay: "0.3s" }}>
           <CountdownTimer />
+        </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in mt-12">
-            <a href="https://pulsechat.online" target="_blank" rel="noopener noreferrer">
-              <Button size="lg" className="gap-2">
-                <MessageCircle className="h-5 w-5" />
-                Join the Conversation
-              </Button>
-            </a>
-            <Link to="/podcast">
-              <Button size="lg" variant="outline" className="gap-2">
-                <Headphones className="h-5 w-5" />
-                Pulse Podcast
-              </Button>
-            </Link>
-          </div>
-        </section>
+        <p
+          className="text-muted-foreground leading-[1.9] max-w-[520px] mb-10 animate-fade-up"
+          style={{ fontSize: "clamp(13px, 1.6vw, 16px)", animationDelay: "0.45s" }}
+        >
+          Every day, 195 countries speak. At midnight, it resets. What the world is saying — and feeling — right now,
+          by region and country.
+        </p>
 
-        {/* Concept Section */}
-        <section className="py-20 border-t border-border">
-          <div className="max-w-4xl mx-auto text-center">
-            <p className="text-xl md:text-2xl text-foreground leading-relaxed">
-              Global Pulse connects humanity through a single daily rhythm — a chat that resets every 24 hours.
-              <br />
-              <span className="text-muted-foreground mt-4 block">
-                When the world speaks, emotion becomes data, and data becomes understanding.
-              </span>
-            </p>
-          </div>
-        </section>
+        <div className="flex gap-4 flex-wrap justify-center animate-fade-up" style={{ animationDelay: "0.6s" }}>
+          <a
+            href="https://pulsechat.online"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-mono text-[11px] tracking-[0.14em] uppercase text-background bg-amber-bright hover:opacity-85 transition-opacity px-8 py-3.5"
+          >
+            Join today's conversation
+          </a>
+          <a
+            href="#intelligence"
+            className="font-mono text-[11px] tracking-[0.14em] uppercase text-muted-foreground border border-hairline border-white/10 hover:text-amber hover:border-amber-hairline transition-colors px-8 py-3.5"
+          >
+            Access the intelligence
+          </a>
+        </div>
+      </section>
 
-        {/* Ecosystem Section */}
-        <section className="py-20 border-t border-border">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-center">
-              The Global Pulse Ecosystem
-            </h2>
-            <p className="text-lg text-muted-foreground mb-12 text-center max-w-2xl mx-auto">
-              Beyond the conversation — exploring new ways to experience humanity's heartbeat
-            </p>
+      <LiveStatsStrip />
+      <LiveTicker />
 
-            <div className="grid md:grid-cols-3 gap-8">
-              <ComingSoonCard icon={Headphones} title="🎧 Pulse Podcast" description="AI reflections on the world's emotional rhythm." />
-              <ComingSoonCard icon={Music} title="🎵 Pulse Songs" description="Music inspired by humanity's collective heartbeat." />
-              <ComingSoonCard icon={Image} title="🖼️ Pulse Highlights (NFT)" description="Daily art born from the world's conversations." />
+      {/* HOW IT WORKS */}
+      <section id="how" className="max-w-[1100px] mx-auto px-10 py-24">
+        <div className="font-mono text-[9px] tracking-[0.22em] uppercase text-amber mb-4">The mechanic</div>
+        <h2 className="font-serif font-normal leading-[1.15] mb-6" style={{ fontSize: "clamp(28px, 4vw, 46px)" }}>
+          Why the reset is the <em className="text-amber-bright italic">product</em>
+        </h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 border border-hairline border-dim mt-14 bg-card/60 backdrop-blur-md">
+          {[
+            {
+              num: "01 · Every day",
+              title: "195 countries speak simultaneously",
+              body: "Select your country or region and join a live, anonymous conversation. No permanent accounts, no algorithmic feed. Just today's voices — globally, honestly, collectively.",
+            },
+            {
+              num: "02 · All day",
+              title: "AI reads sentiment in real time",
+              body: "The intelligence layer runs continuously — tagging emotion, topic, and urgency across every language. The world's mood becomes visible as it shifts, region by region.",
+            },
+            {
+              num: "03 · At midnight UTC",
+              title: "The day closes. The intelligence lives.",
+              body: "Raw chats delete at midnight. But the AI has already synthesised the day into a permanent PulseReport — a historical record of how the world felt today. Every day, forever.",
+            },
+          ].map((c, i) => (
+            <div
+              key={c.num}
+              className={`p-10 ${i < 2 ? "md:border-r border-dim border-hairline" : ""}`}
+            >
+              <span className="block font-mono text-[9px] tracking-[0.2em] uppercase text-amber mb-4">{c.num}</span>
+              <div className="font-serif text-[18px] mb-3">{c.title}</div>
+              <div className="text-[13px] text-muted-foreground leading-[1.8]">{c.body}</div>
             </div>
-          </div>
-        </section>
+          ))}
+        </div>
+      </section>
 
-        {/* Why It Matters Section */}
-        <section className="py-20 border-t border-border">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Why It Matters
-            </h2>
-            <p className="text-xl md:text-2xl text-foreground leading-relaxed">
-              Global Pulse is a living emotional record of humanity — one that renews itself every day, 
-              free from noise, ego, and algorithms.
-            </p>
-          </div>
-        </section>
+      <hr className="border-t border-hairline border-dim" />
 
-        {/* CTA Section */}
-        <section className="py-20 border-t border-border">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold text-foreground mb-6">Be Part of the Pulse</h2>
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Join the world's 24-hour conversation. Your voice shapes humanity's heartbeat.
-            </p>
-            <a href="https://pulsechat.online" target="_blank" rel="noopener noreferrer">
-              <Button size="lg" className="gap-2 animate-heartbeat">
-                <MessageCircle className="h-5 w-5" />
-                Start Pulsing Now
-              </Button>
-            </a>
-          </div>
-        </section>
-      </div>
-    </Layout>;
+      {/* INTELLIGENCE / REPORT */}
+      <section id="intelligence" className="max-w-[1100px] mx-auto px-10 py-24">
+        <div className="font-mono text-[9px] tracking-[0.22em] uppercase text-amber mb-4">
+          Daily intelligence product
+        </div>
+        <h2 className="font-serif font-normal leading-[1.15] mb-6" style={{ fontSize: "clamp(28px, 4vw, 46px)" }}>
+          Today's Global Pulse <em className="text-amber-bright italic">Report</em>
+        </h2>
+        <p className="text-[14px] text-muted-foreground leading-[1.9] max-w-[580px]">
+          Every midnight, the AI distills everything humanity said into one structured report. Free to read.
+          Available to license. A permanent record of what the world felt — today.
+        </p>
+        <PulseReportCard />
+      </section>
+
+      <IntelTiers />
+
+      {/* CTA */}
+      <section className="text-center px-6 py-32 relative z-10 border-t border-hairline border-dim">
+        <h2 className="font-serif font-normal leading-[1.1] mb-5" style={{ fontSize: "clamp(32px, 5vw, 60px)" }}>
+          The world speaks for<br />
+          <em className="text-amber-bright italic">24 hours.</em> Then resets.
+        </h2>
+        <p className="text-[14px] text-muted-foreground mb-10">
+          Join today's conversation — or access the intelligence it generates.
+        </p>
+        <div className="flex gap-4 flex-wrap justify-center">
+          <a
+            href="https://pulsechat.online"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-mono text-[11px] tracking-[0.14em] uppercase text-background bg-amber-bright hover:opacity-85 transition-opacity px-8 py-3.5"
+          >
+            Enter today's pulse
+          </a>
+          <a
+            href="mailto:intelligence@globalpulseworld.xyz"
+            className="font-mono text-[11px] tracking-[0.14em] uppercase text-muted-foreground border border-hairline border-white/10 hover:text-amber hover:border-amber-hairline transition-colors px-8 py-3.5"
+          >
+            Intelligence access →
+          </a>
+        </div>
+      </section>
+    </Layout>
+  );
 };
+
 export default Home;
