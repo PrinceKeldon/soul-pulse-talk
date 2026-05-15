@@ -1,77 +1,51 @@
 import { useEffect, useState } from "react";
 
 const CountdownTimer = () => {
-  const [timeLeft, setTimeLeft] = useState({
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-  });
+  const [t, setT] = useState({ h: 0, m: 0, s: 0 });
 
   useEffect(() => {
-    const calculateTimeLeft = () => {
+    const calc = () => {
       const now = new Date();
-      const utcNow = Date.UTC(
-        now.getUTCFullYear(),
-        now.getUTCMonth(),
-        now.getUTCDate(),
-        now.getUTCHours(),
-        now.getUTCMinutes(),
-        now.getUTCSeconds()
-      );
-      
       const midnight = Date.UTC(
         now.getUTCFullYear(),
         now.getUTCMonth(),
-        now.getUTCDate() + 1,
-        0, 0, 0
+        now.getUTCDate() + 1
       );
-      
-      const difference = midnight - utcNow;
-      
-      const hours = Math.floor(difference / (1000 * 60 * 60));
-      const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-      
-      return { hours, minutes, seconds };
+      const diff = midnight - now.getTime();
+      return {
+        h: Math.floor(diff / 3600000),
+        m: Math.floor((diff % 3600000) / 60000),
+        s: Math.floor((diff % 60000) / 1000),
+      };
     };
-
-    const timer = setInterval(() => {
-      setTimeLeft(calculateTimeLeft());
-    }, 1000);
-
-    setTimeLeft(calculateTimeLeft());
-
-    return () => clearInterval(timer);
+    setT(calc());
+    const id = setInterval(() => setT(calc()), 1000);
+    return () => clearInterval(id);
   }, []);
 
-  const formatNumber = (num: number) => num.toString().padStart(2, '0');
+  const pad = (n: number) => n.toString().padStart(2, "0");
 
   return (
-    <div className="flex flex-col items-center gap-4 my-8">
-      <p className="text-sm text-muted-foreground uppercase tracking-wide">Next Reset In</p>
-      <div className="flex gap-4 items-center">
-        <div className="flex flex-col items-center">
-          <div className="text-4xl md:text-5xl font-heading font-bold text-primary animate-pulse-glow">
-            {formatNumber(timeLeft.hours)}
-          </div>
-          <div className="text-xs text-muted-foreground uppercase mt-1">Hours</div>
-        </div>
-        <div className="text-4xl md:text-5xl font-heading font-bold text-muted-foreground">:</div>
-        <div className="flex flex-col items-center">
-          <div className="text-4xl md:text-5xl font-heading font-bold text-primary animate-pulse-glow">
-            {formatNumber(timeLeft.minutes)}
-          </div>
-          <div className="text-xs text-muted-foreground uppercase mt-1">Minutes</div>
-        </div>
-        <div className="text-4xl md:text-5xl font-heading font-bold text-muted-foreground">:</div>
-        <div className="flex flex-col items-center">
-          <div className="text-4xl md:text-5xl font-heading font-bold text-primary animate-pulse-glow">
-            {formatNumber(timeLeft.seconds)}
-          </div>
-          <div className="text-xs text-muted-foreground uppercase mt-1">Seconds</div>
-        </div>
+    <div className="my-6">
+      <div className="font-mono text-[9px] tracking-[0.24em] uppercase text-muted-foreground mb-2.5 text-center">
+        Today's pulse closes in
       </div>
-      <p className="text-xs text-muted-foreground">Until midnight UTC (00:00)</p>
+      <div
+        className="font-mono font-light tracking-[0.04em] text-foreground leading-none text-center"
+        style={{
+          fontSize: "clamp(42px, 7vw, 88px)",
+          textShadow: "0 0 60px hsl(35 56% 51% / 0.25)",
+        }}
+      >
+        <span>{pad(t.h)}</span>
+        <span className="animate-blink inline-block">:</span>
+        <span>{pad(t.m)}</span>
+        <span className="animate-blink inline-block">:</span>
+        <span>{pad(t.s)}</span>
+      </div>
+      <div className="font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground mt-2.5 text-center">
+        hours &nbsp;&nbsp;&nbsp; minutes &nbsp;&nbsp;&nbsp; seconds
+      </div>
     </div>
   );
 };
