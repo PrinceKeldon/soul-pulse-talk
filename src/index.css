@@ -25,7 +25,7 @@
     --secondary-foreground: 40 17% 80%;
 
     --muted: 217 20% 14%;
-    --muted-foreground: 220 11% 40%;     /* #5a6070 */
+    --muted-foreground: 220 14% 68%;     /* lifted for WCAG AA contrast */
 
     --accent: 0 70% 60%;                 /* #e05050 */
     --accent-foreground: 0 0% 100%;
@@ -46,7 +46,7 @@
     --pulse-teal: 162 64% 51%;           /* #2dd4a8 */
     --pulse-red: 0 70% 60%;              /* #e05050 */
     --pulse-blue: 211 60% 56%;           /* #4a90d4 */
-    --pulse-muted: 220 11% 40%;
+    --pulse-muted: 220 14% 68%;
   }
 
   .dark {
@@ -61,7 +61,7 @@
     --secondary: 217 20% 14%;
     --secondary-foreground: 40 17% 80%;
     --muted: 217 20% 14%;
-    --muted-foreground: 220 11% 40%;
+    --muted-foreground: 220 14% 68%;
     --accent: 0 70% 60%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 70% 60%;
